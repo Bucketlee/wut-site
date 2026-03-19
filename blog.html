@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Why I built Wut — a Chrome extension that tells you what any webpage is about in seconds. The story behind the frustration that started it all.">
+  <title>Why I Built Wut — I Was Tired of Reading Marketing Pages</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #FAFAFA;
+      color: #1a1a1a;
+      line-height: 1.8;
+    }
+    .header {
+      background: white;
+      border-bottom: 1px solid #eee;
+      padding: 16px 40px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 14px;
+      color: #666;
+    }
+    .header a {
+      color: #6366F1;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    article {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+    .meta {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 14px;
+      color: #999;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      color: #111;
+    }
+    .lead {
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    h2 {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin: 48px 0 16px;
+      color: #111;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    blockquote {
+      border-left: 3px solid #6366F1;
+      padding: 12px 24px;
+      margin: 32px 0;
+      background: #F8F7FF;
+      font-style: italic;
+      color: #555;
+    }
+    .highlight {
+      background: #EEF2FF;
+      padding: 24px;
+      border-radius: 8px;
+      margin: 32px 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .highlight strong { color: #4F46E5; }
+    ul {
+      margin: 16px 0 24px 24px;
+      font-size: 18px;
+      color: #333;
+    }
+    li { margin-bottom: 8px; }
+    .tags {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 13px;
+      color: #999;
+    }
+    .tags span {
+      display: inline-block;
+      background: #f0f0f0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-right: 6px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="#">Wut Blog</a> &nbsp;/&nbsp; Building in Public
+  </div>
+
+  <article>
+    <div class="meta">March 19, 2026 &middot; 4 min read</div>
+    <h1>Why I Built Wut — I Was Tired of Reading Marketing Pages</h1>
+    <p class="lead">Every new tool promises to "revolutionize your workflow." But what does it actually do? I got tired of asking that question, so I built something to answer it for me.</p>
+
+    <h2>The Problem That Wouldn't Go Away</h2>
+    <p>I'm a developer. I discover new tools constantly — through Twitter, Hacker News, Product Hunt, or a random link in a Slack channel. And every single time, the experience is the same:</p>
+    <p>I land on the homepage. It says something like "The AI-powered platform for modern teams." I scroll. Feature sections with abstract icons. More buzzwords. A pricing page that requires three clicks to find. By the time I figure out what it actually does, 15 minutes have passed.</p>
+    <p>Sometimes I'd just copy the URL into ChatGPT and ask: "What is this?" But that's its own friction — switching tabs, waiting for a response, losing context.</p>
+
+    <blockquote>I just wanted a button that says: "What is this page? Should I care?"</blockquote>
+
+    <h2>The Moment It Clicked</h2>
+    <p>One afternoon, I was evaluating a backend-as-a-service platform. After reading through their entire site, watching a demo video, and skimming their docs, I realized it didn't support the one thing I needed. 30 minutes, wasted.</p>
+    <p>That's when I thought: what if I could get a structured verdict in 5 seconds? Not a summary — a judgment. Something that tells me who this is for, and more importantly, who it's NOT for.</p>
+
+    <h2>What Wut Actually Does</h2>
+    <p>Wut is a Chrome extension. You click the icon on any webpage, and it gives you a structured breakdown:</p>
+    <ul>
+      <li><strong>What it is</strong> — in one sentence, no marketing fluff</li>
+      <li><strong>Key content</strong> — the important parts only</li>
+      <li><strong>Who it's for</strong> — specific, honest use cases</li>
+      <li><strong>Who it's NOT for</strong> — the part everyone else skips</li>
+      <li><strong>Alternatives</strong> — what else is out there</li>
+    </ul>
+    <p>It works on any page type — not just product pages. Blog posts, technical docs, job listings. It detects the type automatically and adapts the analysis.</p>
+
+    <div class="highlight">
+      <strong>The "Not For" section is the whole point.</strong><br>
+      Most AI tools give you a polished summary. Wut gives you a reason to leave — or stay. That's the difference between a summarizer and a decision-support tool.
+    </div>
+
+    <h2>Design Decisions</h2>
+    <p><strong>No prompts.</strong> You don't type anything. Click the icon, get the result. If I have to type "summarize this page" every time, I might as well use ChatGPT.</p>
+    <p><strong>No servers.</strong> Your API key stays on your device. Page content goes only to the AI provider you chose. I didn't want to run a server, and you shouldn't have to trust one.</p>
+    <p><strong>Multiple AI models.</strong> Claude, GPT, Gemini — use whatever you already have. I didn't want the API key setup to be a blocker.</p>
+    <p><strong>8 languages.</strong> The analysis always comes in your browser's language, regardless of the source page. Visit a Japanese site with a Korean browser? Korean analysis.</p>
+
+    <h2>What I Learned Building It</h2>
+    <p>The hardest part wasn't the code. It was the prompt. Getting an AI to consistently produce honest, structured, non-marketing analysis took a lot of iteration. The AI naturally wants to be positive — teaching it to say "this is NOT for you" was surprisingly difficult.</p>
+    <p>The second hardest part was keeping it simple. Every feature I considered adding ("what about a sidebar?", "what about a chat?", "what about bookmarks?") would have made it less focused. Wut does one thing. That's the point.</p>
+
+    <h2>Try It</h2>
+    <p>Wut is free to install. You bring your own API key from Anthropic, OpenAI, or Google — that's the only cost. A typical analysis costs less than a penny.</p>
+    <p>If you've ever wasted 20 minutes on a landing page only to realize it's not for you, give Wut a try.</p>
+
+    <div class="tags">
+      <span>chrome-extension</span>
+      <span>ai</span>
+      <span>productivity</span>
+      <span>building-in-public</span>
+    </div>
+  </article>
+</body>
+</html>
