@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wut is an AI-powered Chrome extension that instantly analyzes any webpage and tells you what it is, who it's for, and who it's NOT for.">
+  <title>Wut — Instantly understand any webpage</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0F172A;
+      color: #F1F5F9;
+      line-height: 1.6;
+    }
+    .hero {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: #6366F1;
+      border-radius: 14px;
+      font-size: 32px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 32px;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    h1 span { color: #6366F1; }
+    .subtitle {
+      font-size: 20px;
+      color: #94A3B8;
+      max-width: 560px;
+      margin: 0 auto 48px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      text-align: left;
+      margin-bottom: 48px;
+    }
+    .feature {
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .feature h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #F1F5F9;
+    }
+    .feature p {
+      font-size: 14px;
+      color: #94A3B8;
+      line-height: 1.5;
+    }
+    .models {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .model-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 999px;
+      font-size: 14px;
+      color: #CBD5E1;
+    }
+    .model-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .dot-anthropic { background: #D97706; }
+    .dot-openai { background: #22C55E; }
+    .dot-google { background: #3B82F6; }
+    .cta {
+      font-size: 18px;
+      color: #64748B;
+    }
+    .cta a {
+      color: #6366F1;
+      text-decoration: none;
+    }
+    .languages {
+      margin-top: 32px;
+      font-size: 14px;
+      color: #64748B;
+    }
+    .how {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+    .how h2 {
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+    .step {
+      text-align: center;
+    }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #6366F1;
+      border-radius: 50%;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 12px;
+    }
+    .step h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .step p {
+      font-size: 14px;
+      color: #94A3B8;
+    }
+    .privacy {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+      text-align: center;
+    }
+    .privacy p {
+      font-size: 16px;
+      color: #64748B;
+    }
+    .privacy strong {
+      color: #F1F5F9;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="logo">W</div>
+    <h1><span>Wut?</span> Understand any page.</h1>
+    <p class="subtitle">Click the icon. AI tells you what it is, who it's for, and who it's NOT for. No prompts. No chatbot. Just answers.</p>
+
+    <div class="features">
+      <div class="feature">
+        <h3>One-Click Analysis</h3>
+        <p>Open the popup and analysis starts instantly. No buttons, no typing, no prompts needed.</p>
+      </div>
+      <div class="feature">
+        <h3>Smart Page Detection</h3>
+        <p>Automatically detects page type — product, blog, docs, job posting — and adapts the analysis.</p>
+      </div>
+      <div class="feature">
+        <h3>Honest Judgments</h3>
+        <p>Not just a summary. Tells you who it's for AND who it's NOT for, so you can decide fast.</p>
+      </div>
+    </div>
+
+    <div class="models">
+      <div class="model-badge"><span class="dot dot-anthropic"></span>Claude Haiku</div>
+      <div class="model-badge"><span class="dot dot-openai"></span>GPT-4o mini</div>
+      <div class="model-badge"><span class="dot dot-google"></span>Gemini Flash</div>
+    </div>
+
+    <p class="cta">Available on the <a href="#">Chrome Web Store</a></p>
+    <p class="languages">EN / KO / JA / PT / DE / FR / ES / RU</p>
+  </div>
+
+  <div class="how">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Add Your API Key</h3>
+        <p>Pick Claude, GPT, or Gemini. Paste your key. Done.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Visit Any Page</h3>
+        <p>Product page, blog, docs, job listing — anything.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Click the Icon</h3>
+        <p>Instant structured analysis. Decide in seconds.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="privacy">
+    <p><strong>No servers. No tracking. No data collection.</strong><br>
+    Your API key stays on your device. Page content is sent only to the AI service you choose. That's it.</p>
+  </div>
+</body>
+</html>
