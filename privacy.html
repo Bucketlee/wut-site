@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wut Chrome Extension Privacy Policy. No servers, no tracking, no data collection.">
+  <title>Privacy Policy — Wut</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #FAFAFA;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px 24px;
+    }
+    nav .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #111;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    nav .nav-logo span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background: #6366F1;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 800;
+      color: white;
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    nav .nav-links a {
+      color: #999;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.15s;
+    }
+    nav .nav-links a:hover { color: #111; }
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111;
+    }
+    .meta {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 32px;
+    }
+    .summary {
+      background: #EEF2FF;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .summary strong { color: #4F46E5; }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 36px 0 12px;
+      color: #111;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 20px 0 8px;
+      color: #333;
+    }
+    p {
+      font-size: 15px;
+      margin-bottom: 12px;
+      color: #333;
+    }
+    ul {
+      margin: 8px 0 16px 20px;
+      font-size: 15px;
+      color: #333;
+    }
+    li { margin-bottom: 4px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+    }
+    th {
+      background: #f5f5f5;
+      font-weight: 600;
+      color: #333;
+    }
+    td { color: #555; }
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+    a { color: #6366F1; }
+    hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 32px 0;
+    }
+    .highlight {
+      font-weight: 700;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="./" class="nav-logo"><span>W</span> Wut</a>
+    <div class="nav-links">
+      <a href="./blog.html">Blog</a>
+      <a href="./privacy.html">Privacy</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Privacy Policy</h1>
+    <div class="meta">Effective Date: March 19, 2026 &middot; Last Updated: March 19, 2026</div>
+
+    <div class="summary">
+      <strong>The short version:</strong> Wut has no servers. We collect nothing. Everything stays on your device or goes directly to the AI service you choose.
+    </div>
+
+    <p>Wut is a Chrome extension that analyzes web pages using AI to help you understand what a service is and whether it's right for you. This policy explains what data is involved, where it goes, and what we do (and don't do) with it.</p>
+
+    <hr>
+
+    <h2>1. Data We Collect</h2>
+
+    <h3>API Keys</h3>
+    <p>Your AI service API keys (Anthropic, OpenAI, or Google) are stored exclusively in <code>chrome.storage.local</code> on your device. They are never transmitted to any Wut-operated server, because no such server exists.</p>
+
+    <h3>Page URL and Body Text</h3>
+    <p>When you trigger an analysis, the current page's URL and extracted body text are sent to the AI service API you have selected (Anthropic, OpenAI, or Google). This data is used solely to generate the analysis result. It is not stored by Wut beyond the local cache described below.</p>
+
+    <h3>Usage Records (Local Only)</h3>
+    <p>The following information is stored locally on your device:</p>
+    <ul>
+      <li>Domain of the analyzed page</li>
+      <li>AI model used</li>
+      <li>Token counts</li>
+      <li>Timestamp of analysis</li>
+    </ul>
+    <p>This data never leaves your device.</p>
+
+    <hr>
+
+    <h2>2. Data Transmission</h2>
+
+    <p>Data is transmitted only in the following cases:</p>
+
+    <table>
+      <thead>
+        <tr><th>Destination</th><th>When</th><th>What is sent</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Anthropic API</td><td>Claude Haiku selected</td><td>Page URL, body text</td></tr>
+        <tr><td>OpenAI API</td><td>GPT-4o mini selected</td><td>Page URL, body text</td></tr>
+        <tr><td>Google Generative AI API</td><td>Gemini Flash selected</td><td>Page URL, body text</td></tr>
+      </tbody>
+    </table>
+
+    <p class="highlight">Wut-operated servers: None. No data is ever sent to any server owned or operated by Wut.</p>
+
+    <p>Each AI provider has its own privacy policy:</p>
+    <ul>
+      <li><a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic Privacy Policy</a></li>
+      <li><a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI Privacy Policy</a></li>
+      <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+    </ul>
+
+    <hr>
+
+    <h2>3. Data Storage</h2>
+
+    <p>All data is stored in <code>chrome.storage.local</code> on your device:</p>
+    <ul>
+      <li><strong>API keys</strong> — Stored locally. Never transmitted to Wut.</li>
+      <li><strong>Analysis cache</strong> — Expires automatically after 24 hours.</li>
+      <li><strong>User preferences</strong> — Selected AI model, language preference.</li>
+    </ul>
+    <p>When you uninstall the extension, all data is deleted from your device automatically.</p>
+
+    <hr>
+
+    <h2>4. Third-Party Sharing</h2>
+
+    <p>Wut does not share your data with any third party, with one exception: the page URL and body text are sent to the AI service you selected, only when you explicitly trigger an analysis.</p>
+
+    <p>Wut does not use:</p>
+    <ul>
+      <li>Advertising networks</li>
+      <li>Analytics services</li>
+      <li>Tracking or fingerprinting services</li>
+      <li>Cookies of any kind</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. Permissions Explained</h2>
+
+    <p><strong><code>activeTab</code></strong> — Read the content of the current tab when you open the Wut popup. Does not monitor browsing in the background.</p>
+
+    <p><strong><code>storage</code></strong> — Save API keys, analysis cache, and preferences locally on your device.</p>
+
+    <p><strong><code>scripting</code></strong> — Inject a script to extract page text for analysis. Runs only when you trigger an analysis.</p>
+
+    <hr>
+
+    <h2>6. Children's Privacy</h2>
+    <p>Wut is not directed at children under the age of 13 and does not knowingly collect data from children.</p>
+
+    <hr>
+
+    <h2>7. Changes to This Policy</h2>
+    <p>If this policy changes, the updated version will be published at this URL with a revised "Last Updated" date.</p>
+
+    <hr>
+
+    <h2>8. Contact</h2>
+    <p>For questions about this privacy policy or data handling:</p>
+    <p><strong>Email:</strong> <a href="mailto:chanyoung.cedu@gmail.com">chanyoung.cedu@gmail.com</a></p>
+
+    <hr>
+
+    <table>
+      <thead>
+        <tr><th>Date</th><th>Change</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>March 19, 2026</td><td>Initial version published</td></tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
