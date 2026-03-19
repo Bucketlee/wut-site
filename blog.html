@@ -104,12 +104,58 @@
       margin-right: 6px;
       color: #666;
     }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px 24px;
+    }
+    nav .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #111;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    nav .nav-logo span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background: #6366F1;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 800;
+      color: white;
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    nav .nav-links a {
+      color: #999;
+      text-decoration: none;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 14px;
+      transition: color 0.15s;
+    }
+    nav .nav-links a:hover { color: #111; }
   </style>
 </head>
 <body>
-  <div class="header">
-    <a href="#">Wut Blog</a> &nbsp;/&nbsp; Building in Public
-  </div>
+  <nav>
+    <a href="./" class="nav-logo"><span>W</span> Wut</a>
+    <div class="nav-links">
+      <a href="./blog.html">Blog</a>
+      <a href="./privacy">Privacy</a>
+    </div>
+  </nav>
 
   <article>
     <div class="meta">March 19, 2026 &middot; 4 min read</div>
